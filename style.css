@@ -63,7 +63,7 @@ button {
   font: inherit;
 }
 
-form {
+/* form {
   input, textarea, button {
     display: block;
     width: 100%;
@@ -72,5 +72,18 @@ form {
   label, button {
     display: block;
     margin-block: 0.8em 0;
+  }
+} */
+
+form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
+  label {
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+  button {
+    grid-column: 1 / -1;
   }
 }
