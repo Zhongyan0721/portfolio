@@ -1,17 +1,11 @@
 console.log('IT’S ALIVE!');
 
 const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
-  ? "/" : "/zhongyan0721.github.io/";
+  ? "/" : "/zhongyan0721.github.io/portfolio/";
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
-
-
-
-
-
-
 
 let pages = [
     { url: '', title: 'Home' },
