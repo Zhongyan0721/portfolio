@@ -28,3 +28,33 @@ for (let p of pages) {
         a.classList.add('current');
       }
   }
+
+document.body.insertAdjacentHTML(
+  'afterbegin',
+  `
+  <label class="color-scheme">
+    Theme:
+    <select>
+      <option>Automatic</option>
+      <option>Light</option>
+      <option>Dark</option>
+    </select>
+  </label>`,
+);
+
+function setColorScheme(colorScheme) {
+  document.documentElement.style.setProperty('color-scheme', colorScheme);
+}
+
+
+let select = document.querySelector('select');
+select.addEventListener('input', function (event) {
+  console.log('color scheme changed to', event.target.value);
+  localStorage.colorScheme = event.target.value;
+  setColorScheme(event.target.value);
+});
+
+if ("colorScheme" in localStorage){
+  setColorScheme(localStorage.colorScheme);
+  select.value = localStorage.colorScheme;
+}

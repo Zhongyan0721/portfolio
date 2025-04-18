@@ -1,20 +1,21 @@
 
 html {
   --color-accent: skyblue;
-  accent-color: var(--color-accent)
+  accent-color: var(--color-accent);
 }
-a:hover {
+nav a:hover {
   margin-bottom: auto;
   border-bottom-width: 0.4em;
   border-bottom-style: solid;
   border-bottom-color: skyblue;
   background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
+
 body {
     font: 100%/1.5 system-ui;
     max-width: 100ch;
     margin-inline: max(1em, (100% - 100ch) / 2);
-  }
+}
 
 ul {
   display: contents;
@@ -44,7 +45,7 @@ a {
   margin-bottom: auto;
   border-bottom-width: 0.4em;
   border-bottom-style: solid;
-  border-bottom-color: oklch(80% 3% 200);
+  border-bottom-color: var(--border-color);
 }
 
 .Click {
@@ -104,4 +105,12 @@ article {
 
 h2 {
   margin: 0;
+}
+
+label.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font: 80%;
+  font-family: inherit;
 }
