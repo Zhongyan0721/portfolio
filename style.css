@@ -94,6 +94,11 @@ form {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
   gap: 1em;
+  
+  .project-image {
+    width: 100%;
+    height: auto;
+  }
 }
 
 article {
@@ -113,4 +118,25 @@ label.color-scheme {
   right: 1rem;
   font: 80%;
   font-family: inherit;
+}
+
+#profile-stats {
+  dl {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  dt {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #6b7280; /* gray-500 like in Tailwind */
+    grid-row: 1;
+  }
+  
+  dd {
+    font-size: 1.5rem;
+    font-weight: 330;
+    margin: 0;
+    grid-row: 2;
+  }
 }

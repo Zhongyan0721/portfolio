@@ -1,0 +1,70 @@
+[
+    {
+        "title": "Power Outage Analysis",
+        "year": "2025",
+        "image": "../images/Power Outage Analysis.png",
+        "description": "​Power outages have become an increasingly pressing concern due to their frequency and impact on modern society. In the predictive analysis of this project, I will predict the causes of power outage based on other related factors."
+    },
+    {
+        "title": "C++ Path Tracing Render",
+        "year": "2023",
+        "image": "../images/iron_256_MIS.png",
+        "description": "This is a path tracing render implemented with C++. Implemented sophisticated rendering techniques including Multiple Importance Sampling (BRDF sampling + light sampling), microfacet BRDF, Monte Carlo Algorithm to simulate realistic light interactions."
+    },
+    {
+        "title": "Distribution of FPro Scores by Store",
+        "year": "2025",
+        "image": "../images/Distribution of FPro Scores by Store.png",
+        "description": "In this visualization, a Kernel Density Estimate (KDE) plot was chosen to compare the distributions of FPro scores across three grocery stores: Target, Walmart, and Whole Foods."
+    },
+    {
+        "title": "N-gram Model",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Fetched and tokenized large text corpora using custom Python scripts with requests & regex. Built multiple statistical language models (Uniform, Unigram, N-gram) to handle large text (e.g. Homer’s epic) in under 20 seconds."
+    },
+    {
+        "title": "Heart Disease Prediction Model",
+        "year": "2023",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Engineered multiple heart disease classification models based on health metrics, including Logistic Regression, SVM and XGBoost, achieving a prediction accuracy of 92%."
+    },
+    {
+        "title": "Shortest MTS bus route",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Nemo repellendus aspernatur iusto illum minima, deserunt recusandae nostrum labore mollitia provident similique accusantium vel est quia maiores in eius eos. Magnam error nobis autem quod reprehenderit ipsum hic voluptates."
+    },
+    {
+        "title": "A method and system for SQL generation based on background knowledge augment",
+        "year": "2023",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Voluptatem, ullam laborum, molestiae alias vel est repellat, molestias assumenda blanditiis amet inventore cum perferendis recusandae nemo facilis magnam similique dolorem non doloribus mollitia nulla veniam! Illum maiores quibusdam dolorem!"
+    },
+    {
+        "title": "Exploration and practice of XAI human-machine trust mechanism",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Tenetur harum asperiores perferendis, corrupti error quisquam aut, expedita excepturi esse, commodi quod doloremque iure eum aliquid incidunt reprehenderit repudiandae! Assumenda libero inventore reiciendis ex a animi asperiores sint sit."
+    },
+    {
+        "title": "Aperiam in quisquam ducimus?",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Tenetur culpa iure sequi, nulla dolor facere necessitatibus eveniet ipsum nisi voluptate adipisci ullam dolorem corporis, maxime cupiditate, beatae modi possimus et unde a ex maiores id pariatur. Distinctio, magni?"
+    },
+    {
+        "title": "Impedit qui assumenda at.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Eveniet nostrum minus sunt accusantium vitae ipsa, blanditiis atque odio cum, illo ullam aut! Voluptate odit cum itaque error. Molestiae atque officiis repellat enim iste porro officia veniam ad non!"
+    },
+    {
+        "title": "Dolores, optio exercitationem. Rem.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Sunt distinctio vitae impedit id quam inventore delectus, quod architecto suscipit nisi, cum, est quia similique unde adipisci consequatur odio excepturi. Nesciunt, nam vel. Tenetur distinctio placeat beatae rem unde!"
+    },
+    {
+        "title": "Minima ducimus quod hic.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Vero amet, quaerat ipsum nam, necessitatibus exercitationem sunt aliquam harum vel officiis tempore veritatis maiores ipsa inventore accusamus cupiditate accusantium adipisci cum cumque eaque nisi, obcaecati perferendis debitis quo? Sequi."
+    }
+]

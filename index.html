@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="style.css">
-    <script type="module" src="global.js"></script>
+    <script src="global.js" type="module"></script>
+    <script src="index.js" type="module" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zhongyan (Hugo) Luo: Personal site and portfolio</title>
@@ -19,8 +20,13 @@
         Hi! I am a third-year data science major student at UC San Diego. 
         During the past few years, I have interned at several tech companies and gained hand-on experience in finetuning LLMs and building AI applications. Welcome any job or research oppoortunities!
     </p>
-    <img src="images\iron_256_MIS.png" alt="Cool result of offline rendering from my computer graphics course">
-
+    <h2>My Github Stats</h2>
+    <div id="profile-stats">
+    </div>
+    <h2>Latest Projects</h2>
+        <div class="projects">
+            <!-- Dynamically added content will appear here -->
+        </div>
 
 </body>
 </html>
