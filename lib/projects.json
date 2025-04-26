@@ -2,19 +2,19 @@
     {
         "title": "Power Outage Analysis",
         "year": "2025",
-        "image": "../images/Power Outage Analysis.png",
+        "image": "https://github.com/Zhongyan0721/portfolio/blob/main/images/Power%20Outage%20Analysis.png",
         "description": "​Power outages have become an increasingly pressing concern due to their frequency and impact on modern society. In the predictive analysis of this project, I will predict the causes of power outage based on other related factors."
     },
     {
         "title": "C++ Path Tracing Render",
         "year": "2023",
-        "image": "../images/iron_256_MIS.png",
+        "image": "https://github.com/Zhongyan0721/portfolio/blob/main/images/iron_256_MIS.png",
         "description": "This is a path tracing render implemented with C++. Implemented sophisticated rendering techniques including Multiple Importance Sampling (BRDF sampling + light sampling), microfacet BRDF, Monte Carlo Algorithm to simulate realistic light interactions."
     },
     {
         "title": "Distribution of FPro Scores by Store",
         "year": "2025",
-        "image": "../images/Distribution of FPro Scores by Store.png",
+        "image": "https://github.com/Zhongyan0721/portfolio/blob/main/images/Distribution%20of%20FPro%20Scores%20by%20Store.png",
         "description": "In this visualization, a Kernel Density Estimate (KDE) plot was chosen to compare the distributions of FPro scores across three grocery stores: Target, Walmart, and Whole Foods."
     },
     {
