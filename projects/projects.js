@@ -12,14 +12,15 @@ document.querySelector('h1').insertAdjacentHTML('afterbegin', count + ' ');
 
 let arcGenerator = d3.arc().innerRadius(0).outerRadius(50);
 
-let data = [
-    { value: 1, label: 'apples' },
-    { value: 2, label: 'oranges' },
-    { value: 3, label: 'mangos' },
-    { value: 4, label: 'pears' },
-    { value: 5, label: 'limes' },
-    { value: 5, label: 'cherries' },
-  ];
+let rolledData = d3.rollups(
+  projects,
+  (v) => v.length,
+  (d) => d.year,
+);
+
+let data = rolledData.map(([year, count]) => {
+  return { value: count, label: year };
+});
   
 let colors = d3.scaleOrdinal(d3.schemeTableau10);
 
@@ -46,3 +47,103 @@ arcs.forEach((arc, idx) => {
       .attr('d', arc)
       .attr('fill', colors(idx))
 })
+
+let legend = d3.select('.legend');
+data.forEach((d, idx) => {
+  legend
+    .append('li')
+    .attr('style', `--color:${colors(idx)}`)
+    .attr('class', `legend_item`)
+    .html(`<span class="swatch"></span> ${d.label} <em style="color:grey">(${d.value})</em>`);
+});
+
+
+function renderPieChart(projectsGiven) {
+
+  let newRolledData = d3.rollups(
+    projectsGiven,
+    (v) => v.length,
+    (d) => d.year,
+  );
+
+  let newData = newRolledData.map(([year, count]) => {
+    return { value: count, label: year };
+  });
+  let newSliceGenerator = d3.pie().value((d) => d.value);
+  let newArcData = newSliceGenerator(sliceGenerator(newData));
+  let newArcs = newArcData.map((d) => arcGenerator(d));
+
+  let newSVG = d3.select('svg');
+  newSVG.selectAll('path').remove();
+  let newLegend = d3.select('.legend');
+  newLegend.selectAll('.legend_item').remove();
+
+  newArcs.forEach((arc, idx) => {
+    d3.select('svg')
+      .append('path')
+      .attr('d', arc)
+      .attr('fill', colors(idx))
+  })
+
+  let legend = d3.select('.legend');
+  newData.forEach((d, idx) => {
+    legend
+      .append('li')
+      .attr('style', `--color:${colors(idx)}`)
+      .attr('class', `legend_item`)
+      .html(`<span class="swatch"></span> ${d.label} <em style="color:grey">(${d.value})</em>`);
+  });
+}
+
+
+
+renderPieChart(projects);
+
+
+
+let selectedIndex = -1;
+let svg = d3.select('svg');
+svg.selectAll('path').remove();
+arcs.forEach((arc, i) => {
+  svg
+    .append('path')
+    .attr('d', arc)
+    .attr('fill', colors(i))
+    .on('click', () => {
+      selectedIndex = selectedIndex === i ? -1 : i;
+
+      svg
+        .selectAll('path')
+        .attr('class', (_, idx) => (
+          selectedIndex === -1 ? '' : (selectedIndex === idx ? 'selected' : '')
+        ));
+
+        legend
+        .selectAll('li')
+        .attr('class', (_, idx) => (
+          selectedIndex === -1 ? 'legend_item' : (selectedIndex === idx ? 'selected_legend_item' : 'legend_item')
+        ));
+
+        if (selectedIndex === -1) {
+          renderProjects(projects, projectsContainer, 'h2');
+        } else {
+          const selectedYear = data[selectedIndex].label;
+          const filteredByYear = projects.filter(p => p.year === selectedYear);
+          renderProjects(filteredByYear, projectsContainer, 'h2');
+        }
+    });
+});
+
+
+
+let query = '';
+let searchInput = document.querySelector('.searchBar');
+searchInput.addEventListener('change', (event) => {
+  query = event.target.value;
+  let filteredProjects = projects.filter((project) => {
+    let values = Object.values(project).join('\n').toLowerCase();
+    return values.includes(query.toLowerCase());
+  });
+  renderProjects(filteredProjects, projectsContainer, 'h2');
+  renderPieChart(filteredProjects);
+});

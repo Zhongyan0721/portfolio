@@ -147,3 +147,69 @@ label.color-scheme {
 
   overflow: visible;
 }
+
+.swatch {
+  display: inline-block;
+  align-items: center;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background-color: var(--color);
+}
+
+.legend {
+  display: grid;
+  border: 1px solid #6b7280;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  padding: 0.5em;
+  margin: 1.5em;
+  gap: 0.1em;
+  flex: 1;
+  align-items: flex-end;
+}
+
+.legend_item {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+.searchBar {
+  width: 100%;
+  padding: 0.5em;
+  font-size: 16px;
+  border: 1px solid;
+  margin-bottom: 2em;
+}
+
+&:has(path:hover) {
+  path:not(:hover) {
+    opacity: 0.5;
+  }
+}
+
+path {
+  transition: 300ms;
+  cursor: pointer;
+}
+
+.selected {
+  --color: oklch(60% 45% 0) !important;
+
+  &:is(path) {
+    fill: var(--color);
+  }
+}
+
+.selected_legend_item {
+  display: flex;
+  --color: oklch(60% 45% 0) !important;
+  align-items: center;
+  gap: 0.3em;
+}

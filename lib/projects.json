@@ -18,6 +18,24 @@
         "description": "In this visualization, a Kernel Density Estimate (KDE) plot was chosen to compare the distributions of FPro scores across three grocery stores: Target, Walmart, and Whole Foods."
     },
     {
+        "title": "RAG pipeline based on banking scenario",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": ""
+    },
+    {
+        "title": "A method and system for SQL generation based on background knowledge augment",
+        "year": "2023",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Voluptatem, ullam laborum, molestiae alias vel est repellat, molestias assumenda blanditiis amet inventore cum perferendis recusandae nemo facilis magnam similique dolorem non doloribus mollitia nulla veniam! Illum maiores quibusdam dolorem!"
+    },
+    {
+        "title": "Exploration and practice of XAI human-machine trust mechanism",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Tenetur harum asperiores perferendis, corrupti error quisquam aut, expedita excepturi esse, commodi quod doloremque iure eum aliquid incidunt reprehenderit repudiandae! Assumenda libero inventore reiciendis ex a animi asperiores sint sit."
+    },
+    {
         "title": "N-gram Model",
         "year": "2025",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
@@ -36,34 +54,32 @@
         "description": "Nemo repellendus aspernatur iusto illum minima, deserunt recusandae nostrum labore mollitia provident similique accusantium vel est quia maiores in eius eos. Magnam error nobis autem quod reprehenderit ipsum hic voluptates."
     },
     {
-        "title": "A method and system for SQL generation based on background knowledge augment",
-        "year": "2023",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Voluptatem, ullam laborum, molestiae alias vel est repellat, molestias assumenda blanditiis amet inventore cum perferendis recusandae nemo facilis magnam similique dolorem non doloribus mollitia nulla veniam! Illum maiores quibusdam dolorem!"
-    },
-    {
-        "title": "Exploration and practice of XAI human-machine trust mechanism",
-        "year": "2024",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Tenetur harum asperiores perferendis, corrupti error quisquam aut, expedita excepturi esse, commodi quod doloremque iure eum aliquid incidunt reprehenderit repudiandae! Assumenda libero inventore reiciendis ex a animi asperiores sint sit."
-    },
-    {
-        "title": "Aperiam in quisquam ducimus?",
+        "title": "Persuasive vs Deceptive Visualization",
+        "year": "2025",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Tenetur culpa iure sequi, nulla dolor facere necessitatibus eveniet ipsum nisi voluptate adipisci ullam dolorem corporis, maxime cupiditate, beatae modi possimus et unde a ex maiores id pariatur. Distinctio, magni?"
     },
     {
-        "title": "Impedit qui assumenda at.",
+        "title": "Sensitive Word Detection in LLM",
+        "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Eveniet nostrum minus sunt accusantium vitae ipsa, blanditiis atque odio cum, illo ullam aut! Voluptate odit cum itaque error. Molestiae atque officiis repellat enim iste porro officia veniam ad non!"
     },
     {
-        "title": "Dolores, optio exercitationem. Rem.",
+        "title": "COVID Impact on Global Economy",
+        "year": "2022",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Sunt distinctio vitae impedit id quam inventore delectus, quod architecto suscipit nisi, cum, est quia similique unde adipisci consequatur odio excepturi. Nesciunt, nam vel. Tenetur distinctio placeat beatae rem unde!"
     },
     {
-        "title": "Minima ducimus quod hic.",
+        "title": "Job Match",
+        "year": "2022",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Vero amet, quaerat ipsum nam, necessitatibus exercitationem sunt aliquam harum vel officiis tempore veritatis maiores ipsa inventore accusamus cupiditate accusantium adipisci cum cumque eaque nisi, obcaecati perferendis debitis quo? Sequi."
+    },
+    {
+        "title": "Fabric Simulation",
+        "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Vero amet, quaerat ipsum nam, necessitatibus exercitationem sunt aliquam harum vel officiis tempore veritatis maiores ipsa inventore accusamus cupiditate accusantium adipisci cum cumque eaque nisi, obcaecati perferendis debitis quo? Sequi."
     }
