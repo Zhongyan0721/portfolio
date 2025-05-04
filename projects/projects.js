@@ -57,9 +57,9 @@ data.forEach((d, idx) => {
     .html(`<span class="swatch"></span> ${d.label} <em style="color:grey">(${d.value})</em>`);
 });
 
-
+// arcs and data used in the click handler are not updated after filtering via the search bar.
+// So, when you search and then click a pie slice, it refers to the old data, which causes mismatches in selectedIndex, data, and class assignments.
 function renderPieChart(projectsGiven) {
-
   let newRolledData = d3.rollups(
     projectsGiven,
     (v) => v.length,
@@ -69,23 +69,49 @@ function renderPieChart(projectsGiven) {
   let newData = newRolledData.map(([year, count]) => {
     return { value: count, label: year };
   });
+
   let newSliceGenerator = d3.pie().value((d) => d.value);
-  let newArcData = newSliceGenerator(sliceGenerator(newData));
+  let newArcData = newSliceGenerator(newData);
   let newArcs = newArcData.map((d) => arcGenerator(d));
 
-  let newSVG = d3.select('svg');
-  newSVG.selectAll('path').remove();
-  let newLegend = d3.select('.legend');
-  newLegend.selectAll('.legend_item').remove();
-
-  newArcs.forEach((arc, idx) => {
-    d3.select('svg')
-      .append('path')
-      .attr('d', arc)
-      .attr('fill', colors(idx))
-  })
+  let svg = d3.select('svg');
+  svg.selectAll('path').remove();
 
   let legend = d3.select('.legend');
+  legend.selectAll('.legend_item').remove();
+
+  let selectedIndex = -1;
+
+  newArcs.forEach((arc, i) => {
+    svg
+      .append('path')
+      .attr('d', arc)
+      .attr('fill', colors(i))
+      .on('click', () => {
+        selectedIndex = selectedIndex === i ? -1 : i;
+
+        svg
+          .selectAll('path')
+          .attr('class', (_, idx) => (
+            selectedIndex === -1 ? '' : (selectedIndex === idx ? 'selected' : '')
+          ));
+
+        legend
+          .selectAll('li')
+          .attr('class', (_, idx) => (
+            selectedIndex === -1 ? 'legend_item' : (selectedIndex === idx ? 'selected_legend_item' : 'legend_item')
+          ));
+
+        if (selectedIndex === -1) {
+          renderProjects(projectsGiven, projectsContainer, 'h2');
+        } else {
+          const selectedYear = newData[selectedIndex].label;
+          const filteredByYear = projectsGiven.filter(p => p.year === selectedYear);
+          renderProjects(filteredByYear, projectsContainer, 'h2');
+        }
+      });
+  });
+
   newData.forEach((d, idx) => {
     legend
       .append('li')
@@ -96,45 +122,7 @@ function renderPieChart(projectsGiven) {
 }
 
 
-
 renderPieChart(projects);
-
-
-
-let selectedIndex = -1;
-let svg = d3.select('svg');
-svg.selectAll('path').remove();
-arcs.forEach((arc, i) => {
-  svg
-    .append('path')
-    .attr('d', arc)
-    .attr('fill', colors(i))
-    .on('click', () => {
-      selectedIndex = selectedIndex === i ? -1 : i;
-
-      svg
-        .selectAll('path')
-        .attr('class', (_, idx) => (
-          selectedIndex === -1 ? '' : (selectedIndex === idx ? 'selected' : '')
-        ));
-
-        legend
-        .selectAll('li')
-        .attr('class', (_, idx) => (
-          selectedIndex === -1 ? 'legend_item' : (selectedIndex === idx ? 'selected_legend_item' : 'legend_item')
-        ));
-
-        if (selectedIndex === -1) {
-          renderProjects(projects, projectsContainer, 'h2');
-        } else {
-          const selectedYear = data[selectedIndex].label;
-          const filteredByYear = projects.filter(p => p.year === selectedYear);
-          renderProjects(filteredByYear, projectsContainer, 'h2');
-        }
-    });
-});
-
-
 
 let query = '';
 let searchInput = document.querySelector('.searchBar');
@@ -147,3 +135,7 @@ searchInput.addEventListener('change', (event) => {
   renderProjects(filteredProjects, projectsContainer, 'h2');
   renderPieChart(filteredProjects);
 });
+
+
+
+
