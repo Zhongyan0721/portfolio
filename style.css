@@ -141,6 +141,27 @@ label.color-scheme {
   }
 }
 
+#stats {
+  dl {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  dt {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #6b7280; /* gray-500 like in Tailwind */
+    grid-row: 1;
+  }
+  
+  dd {
+    font-size: 1.5rem;
+    font-weight: 330;
+    margin: 0;
+    grid-row: 2;
+  }
+}
+
 #projects-pie-plot {
   max-width: 20em;
   margin-block: 2em;
@@ -212,4 +233,78 @@ path {
   --color: oklch(60% 45% 0) !important;
   align-items: center;
   gap: 0.3em;
+}
+
+.gridlines {
+  opacity: 20%;
+}
+
+dl.info {
+  display: grid;
+  grid-template-columns: max-content auto;
+  gap: 0.5em 1em;
+  margin: 0;
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info dt,
+dl.info dd {
+  margin: 0;
+}
+
+dl.info dt {
+  color: #666; /* Make labels less prominent */
+  font-weight: normal;
+}
+
+dl.info dd {
+  font-weight: bold;
+}
+
+.tooltip {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+}
+
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+
+#commit-tooltip {
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 5px 5px 5px burlywood;
+  border-radius: 20%;
+  backdrop-filter: blur(3px);
+  padding: auto;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+circle.selected {
+  fill: #ff6b6b;
+}
+
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8; /* 5 + 3 */
+  }
+}
+
+.selection {
+  fill-opacity: 0.1;
+  stroke: black;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
 }
