@@ -78,7 +78,7 @@ function renderCommitInfo(data, commits) {
     (d) => new Date(d.datetime).toLocaleString('en', { dayPeriod: 'short' }),
   );
   const maxPeriod = d3.greatest(workByPeriod, (d) => d[1])?.[0];
-  dl.append('dt').text('Most active day of week');
+  dl.append('dt').text('Most time of a day');
   dl.append('dd').text(maxPeriod);
 }
 
